@@ -1,0 +1,5 @@
+---
+applications:
+ - name: tejc99flaskr
+   random-route: true
+memory: 256M

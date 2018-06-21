@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>夏のオープンキャンパス</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+  <div id="stage" class="stage"></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/react.min.js'></script>
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+    <div style="width: 80%;margin: 0 auto;max-width: 500px;">
+  {% if images  %}
+      <table><tr>
+　　  {% for image in images %}
+          <td width="100"><img src="{{ url_for('static',filename="") }}{{ image.filename }}" width="{{ image.width}}" height="{{ image.height }}"/></td>
+  　　{% endfor %}
+  　　</tr></table>
+  {% else %}
+      <table><tr>
+      
+          <td width="100"><img style="border-radius:50%" src="/static/img/01_angry.jpg" width="20" height="20"/></td>
+          
+          <td width="100"><img style="border-radius:50%" src="/static/img/02_disgust.jpg" width="20" height="20"/></td>
+          
+          <td width="100"><img style="border-radius:50%" src="/static/img/03_fear.jpg" width="20" height="20"/></td>
+          
+          <td width="100"><img style="border-radius:50%" src="/static/img/04_joy.jpg" width="20" height="20"/></td>
+          
+          <td width="100"><img style="border-radius:50%" src="/static/img/05_sadness.jpg" width="20" height="20"/></td>
+          
+  　　</tr></table>
+  {% endif %}
+
+  {% if messages  %}
+　　  {% for message in messages %}
+  　　  {{message}}
+  　　{% endfor %}
+  {% endif %}
+    </div>
+
+
+</body>
+</html>
