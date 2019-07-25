@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>夏のオープンキャンパス</title>
+  <title>オープンキャンパス</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -18,11 +18,12 @@
     <div style="width: 80%;margin: 0 auto;max-width: 500px;">
   {% if images  %}
       <table><tr>
-　　  {% for image in images %}
+      {% for image in images %}
           <td width="100"><img src="{{ url_for('static',filename="") }}{{ image.filename }}" width="{{ image.width}}" height="{{ image.height }}"/></td>
-  　　{% endfor %}
-  　　</tr></table>
+      {% endfor %}
+      </tr></table>
   {% else %}
+<!--
       <table><tr>
       
           <td width="100"><img style="border-radius:50%" src="/static/img/01_angry.jpg" width="20" height="20"/></td>
@@ -35,13 +36,13 @@
           
           <td width="100"><img style="border-radius:50%" src="/static/img/05_sadness.jpg" width="20" height="20"/></td>
           
-  　　</tr></table>
+      </tr></table>
+-->
   {% endif %}
-
   {% if messages  %}
-　　  {% for message in messages %}
-  　　  {{message}}
-  　　{% endfor %}
+      {% for message in messages %}
+        {{message}}
+      {% endfor %}
   {% endif %}
     </div>
 

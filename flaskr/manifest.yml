@@ -1,5 +1,7 @@
 ---
 applications:
  - name: tejc99flaskr
-   random-route: true
+   host: tejc99flaskr
 memory: 256M
+   env:
+      FLASK_APP:  start.py
